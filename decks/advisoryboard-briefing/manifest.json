@@ -1,0 +1,28 @@
+{
+  "title": "Vandelay Industries — Quarterly Advisory Board Briefing",
+  "slides": [
+    { "file": "slide-cover.html", "label": "Cover" },
+    { "file": "slide-agenda.html", "label": "Agenda" },
+    { "file": "slide-north-star.html", "label": "Vision / North Star" },
+    { "file": "slide-canvas.html", "label": "Business Model Canvas" },
+    { "file": "slide-highlights.html", "label": "Highlights" },
+    { "file": "slide-whats-hard.html", "label": "What's Hard Right Now" },
+    { "file": "slide-financial-kpis.html", "label": "Financial KPIs" },
+    { "file": "slide-objectives-now.html", "label": "Strategic Objectives — Now" },
+    { "file": "slide-objectives-next.html", "label": "Strategic Objectives — Next" },
+    { "file": "slide-objectives-later.html", "label": "Strategic Objectives — Later" },
+    { "file": "slide-team.html", "label": "Team / Org Updates" },
+    { "file": "slide-focused-topic.html", "label": "Focused Topic" },
+    { "file": "slide-discussion.html", "label": "Discussion / Q&A" },
+    { "file": "slide-emergency-divider.html", "label": "Appendix · Emergency Briefing Template" },
+    { "file": "slide-emergency-cover.html", "label": "Emergency Cover" },
+    { "file": "slide-emergency-agenda.html", "label": "Emergency Agenda" },
+    { "file": "slide-emergency-north-star.html", "label": "Emergency · Vision / North Star" },
+    { "file": "slide-emergency-canvas.html", "label": "Emergency · Business Model Canvas" },
+    { "file": "slide-situation.html", "label": "The Situation" },
+    { "file": "slide-impact.html", "label": "What's at Stake" },
+    { "file": "slide-options.html", "label": "Options Considered" },
+    { "file": "slide-recommendation.html", "label": "Our Recommendation" },
+    { "file": "slide-emergency-ask.html", "label": "What We Need From You" }
+  ]
+}

@@ -1,0 +1,824 @@
+/* ================================================================
+   Vandelay Industries — Advisory Board Briefing
+   Deck-local design system
+   See ../DESIGN.md for design decisions.
+
+   Style: Operator Energy — a working document, not a pitch deck.
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* Color */
+  --ink: #1C1C1C;
+  --ink-light: #3A3A3A;
+  --warm-dark: #1C1810;
+  --sage: #6B7F5C;
+  --sage-soft: #A8B69A;
+  --cream: #F5F1E8;
+  --cream-alt: #EDE7DA;
+  --cream-dim: rgba(245, 241, 232, 0.65);
+  --slate: #5A5A5A;
+  --slate-light: #8A8580;
+  --white: #FFFFFF;
+  --rule: rgba(28, 28, 28, 0.10);
+  --rule-dark: rgba(245, 241, 232, 0.15);
+
+  /* Type */
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+
+  /* Padding */
+  --pad-argument-y: 64px;
+  --pad-argument-x: 88px;
+  --pad-data-y: 48px;
+  --pad-data-x: 64px;
+  --gap-card: 20px;
+  --gap-section: 32px;
+
+  /* Headline sizes */
+  --headline-argument: 38px;
+  --headline-data: 30px;
+  --headline-cover: 64px;
+}
+
+/* ── Reset ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern", "liga";
+}
+
+/* ── Slide Shell ── */
+.slide {
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background: var(--cream);
+}
+
+/* ── Shared: Section Label ──
+   The recurring visual signature: small uppercase sage label
+   with a 48px hairline rule directly underneath. */
+.section-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--sage);
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.section-label--dark { color: var(--sage-soft); }
+.section-label::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: currentColor;
+  margin-top: 8px;
+  opacity: 0.6;
+}
+
+/* ── Shared: Slide Title ──
+   Source Serif headline. Period at end is the writer's responsibility. */
+.slide-title {
+  font-family: var(--serif);
+  font-size: var(--headline-argument);
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.slide-title em {
+  font-style: italic;
+  color: var(--sage);
+}
+.slide-title--data {
+  font-size: var(--headline-data);
+  margin-bottom: 4px;
+}
+.slide-title--dark { color: var(--cream); }
+.slide-title--dark em { color: var(--sage-soft); }
+
+/* ── Shared: Body Text ── */
+.body-large {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--slate);
+  font-weight: 400;
+}
+.body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--slate);
+  font-weight: 400;
+}
+.body-small {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--slate);
+  font-weight: 400;
+}
+
+/* ── Shared: Editor Notes (italic placeholder hints) ── */
+.editor-note {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--slate-light);
+  font-weight: 400;
+  letter-spacing: 0.05px;
+}
+
+/* ── Shared: Slide Number ──
+   Format: lowercase "03 / 19". Quiet, document-like. */
+.slide-num {
+  position: absolute;
+  bottom: 24px;
+  right: 32px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.slide-num--light { color: var(--slate-light); }
+.slide-num--dark { color: var(--cream-dim); }
+
+/* ──────────────────────────────────────────────────────────
+   Cover Slide (dark — section opener)
+   Used only on slide 1. Sets emotional gravity for the deck.
+   ────────────────────────────────────────────────────────── */
+.slide--cover {
+  background: var(--warm-dark);
+  flex-direction: column;
+  padding: var(--pad-argument-y) var(--pad-argument-x);
+  justify-content: space-between;
+  color: var(--cream);
+}
+
+.cover__top {
+  flex: 0 0 auto;
+}
+
+.cover__label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--sage-soft);
+  display: inline-block;
+}
+.cover__label::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: currentColor;
+  margin-top: 8px;
+  opacity: 0.6;
+}
+
+.cover__middle {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover__title {
+  font-family: var(--serif);
+  font-size: var(--headline-cover);
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 18px;
+}
+
+.cover__subtitle {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--cream-dim);
+  letter-spacing: 0.1px;
+}
+
+.cover__bottom {
+  flex: 0 0 auto;
+}
+
+.cover__meta {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--cream-dim);
+  letter-spacing: 0.1px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Vision / North Star Slide (dark — section opener)
+   Slide 3. Opens the body of the briefing.
+   Statement + supporting paragraph (option B layout).
+   ────────────────────────────────────────────────────────── */
+.slide--vision {
+  background: var(--warm-dark);
+  flex-direction: column;
+  padding: var(--pad-argument-y) var(--pad-argument-x);
+  justify-content: space-between;
+  color: var(--cream);
+}
+
+.vision__top {
+  flex: 0 0 auto;
+}
+
+.vision__middle {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 880px;
+}
+
+.vision__statement {
+  font-family: var(--serif);
+  font-size: 48px;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 28px;
+}
+.vision__statement em {
+  font-style: italic;
+  color: var(--sage-soft);
+}
+
+.vision__body {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--cream-dim);
+  max-width: 660px;
+}
+
+.vision__bottom {
+  flex: 0 0 auto;
+}
+
+.vision__note {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-style: italic;
+  color: rgba(245, 241, 232, 0.32);
+  font-weight: 400;
+  letter-spacing: 0.05px;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Generic Argument Slide Shell (cream — most slides)
+   ────────────────────────────────────────────────────────── */
+.slide--argument {
+  flex-direction: column;
+  padding: var(--pad-argument-y) var(--pad-argument-x);
+}
+.slide--data {
+  flex-direction: column;
+  padding: var(--pad-data-y) var(--pad-data-x);
+}
+.slide-header { margin-bottom: 32px; }
+.slide-footer-note {
+  margin-top: auto;
+  padding-top: 24px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-style: italic;
+  color: var(--slate-light);
+  font-weight: 400;
+  max-width: 760px;
+  line-height: 1.5;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Agenda Slide (cream)
+   ────────────────────────────────────────────────────────── */
+.agenda__list {
+  display: flex;
+  flex-direction: column;
+}
+.agenda__item {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 20px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.agenda__item:last-child { border-bottom: none; }
+.agenda__num {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sage);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+.agenda__title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.agenda__time {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--slate-light);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.3px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Business Model Canvas (cream — data slide)
+   ────────────────────────────────────────────────────────── */
+.canvas__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 8px;
+}
+.canvas__cell {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.canvas__cell--changed {
+  background: var(--cream-alt);
+  border-color: rgba(107, 127, 92, 0.5);
+}
+.canvas__cell--unchanged { opacity: 0.55; }
+.canvas__cell--kp { grid-column: 1; grid-row: 1 / 3; }
+.canvas__cell--ka { grid-column: 2; grid-row: 1; }
+.canvas__cell--kr { grid-column: 2; grid-row: 2; }
+.canvas__cell--vp { grid-column: 3; grid-row: 1 / 3; }
+.canvas__cell--cr { grid-column: 4; grid-row: 1; }
+.canvas__cell--ch { grid-column: 4; grid-row: 2; }
+.canvas__cell--cs { grid-column: 5; grid-row: 1 / 3; }
+.canvas__cell--cost { grid-column: 1 / 4; grid-row: 3; }
+.canvas__cell--revenue { grid-column: 4 / 6; grid-row: 3; }
+.canvas__cell-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sage);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.canvas__cell--unchanged .canvas__cell-label { color: var(--slate-light); }
+.canvas__cell-marker {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+.canvas__cell-content {
+  font-family: var(--sans);
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 400;
+}
+.canvas__cell-content ul { list-style: none; padding: 0; margin: 0; }
+.canvas__cell-content li { padding: 1px 0; }
+.canvas__legend {
+  margin-top: 14px;
+  display: flex;
+  gap: 24px;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--slate-light);
+}
+.canvas__legend-item { display: flex; align-items: center; gap: 8px; }
+.canvas__legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+}
+.canvas__legend-swatch--changed { background: var(--cream-alt); border-color: rgba(107, 127, 92, 0.5); }
+.canvas__legend-swatch--unchanged { background: var(--white); opacity: 0.55; }
+
+/* ──────────────────────────────────────────────────────────
+   Generic Item-List (highlights, team, asks, situations, etc.)
+   ────────────────────────────────────────────────────────── */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 920px;
+}
+.item-list__item {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+}
+.item-list__item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-list__label {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.item-list__detail {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.55;
+  max-width: 740px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Prose Slide (what's hard, situation, recommendation)
+   ────────────────────────────────────────────────────────── */
+.prose__body {
+  max-width: 760px;
+}
+.prose__paragraph {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+.prose__paragraph:last-child { margin-bottom: 0; }
+.prose__paragraph strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ──────────────────────────────────────────────────────────
+   Financial KPIs Slide
+   ────────────────────────────────────────────────────────── */
+.kpis__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.kpi__card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.kpi__label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+.kpi__value {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+}
+.kpi__delta {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--slate);
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.kpi__delta--positive { color: var(--sage); font-weight: 600; }
+.kpi__delta--neutral { color: var(--slate); }
+.kpi__delta--negative { color: #B5532A; font-weight: 600; }
+.kpi__target {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--slate-light);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Strategic Objectives (Now / Next / Later)
+   ────────────────────────────────────────────────────────── */
+.objectives__list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 940px;
+}
+.objective__item {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+}
+.objective__item:last-child { border-bottom: none; padding-bottom: 0; }
+.objective__header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.objective__title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.objective__status {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: var(--cream-alt);
+}
+.objective__status--done { color: var(--sage); }
+.objective__status--progress { color: var(--ink); }
+.objective__status--planned { color: var(--slate); }
+.objective__detail {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.55;
+  max-width: 740px;
+}
+.objective__owner {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--slate-light);
+  margin-top: 6px;
+  letter-spacing: 0.2px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Team / Org Updates
+   ────────────────────────────────────────────────────────── */
+.team__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+  max-width: 980px;
+}
+.team__group-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sage);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.team__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.team__item {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.team__item-name { font-weight: 600; }
+.team__item-detail {
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Focused Topic
+   ────────────────────────────────────────────────────────── */
+.focused__question {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 28px;
+  max-width: 920px;
+  letter-spacing: -0.3px;
+}
+.focused__framing {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--slate);
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+.focused__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 800px;
+}
+.focused__bullet {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--slate);
+  padding-left: 18px;
+  position: relative;
+}
+.focused__bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--slate-light);
+}
+
+/* ──────────────────────────────────────────────────────────
+   Asks (alternate to Focused Topic)
+   ────────────────────────────────────────────────────────── */
+.asks__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 920px;
+}
+.asks__item {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+.asks__item:last-child { border-bottom: none; padding-bottom: 0; }
+.asks__category {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sage);
+  margin-bottom: 10px;
+}
+.asks__detail {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 800px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Discussion / Q&A (close)
+   ────────────────────────────────────────────────────────── */
+.slide--discussion {
+  flex-direction: column;
+  padding: var(--pad-argument-y) var(--pad-argument-x);
+  justify-content: center;
+}
+.discussion__title {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -1.2px;
+  line-height: 1.1;
+  margin-bottom: 28px;
+}
+.discussion__title em { font-style: italic; color: var(--sage); }
+.discussion__sub {
+  font-family: var(--sans);
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Emergency Divider (dark — section opener for appendix)
+   ────────────────────────────────────────────────────────── */
+.slide--emergency-divider {
+  background: var(--warm-dark);
+  flex-direction: column;
+  padding: var(--pad-argument-y) var(--pad-argument-x);
+  justify-content: space-between;
+  color: var(--cream);
+}
+.emergency-divider__top { flex: 0 0 auto; }
+.emergency-divider__middle {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 880px;
+}
+.emergency-divider__title {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+.emergency-divider__title em {
+  font-style: italic;
+  color: var(--sage-soft);
+}
+.emergency-divider__sub {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  max-width: 660px;
+  font-weight: 400;
+}
+.emergency-divider__bottom { flex: 0 0 auto; }
+
+/* ──────────────────────────────────────────────────────────
+   Options Considered (emergency)
+   ────────────────────────────────────────────────────────── */
+.options__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 1040px;
+}
+.option__item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.option__item:last-child { border-bottom: none; padding-bottom: 0; }
+.option__num {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--sage);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  padding-top: 2px;
+}
+.option__title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.option__detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.option__pros, .option__cons {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--slate);
+}
+.option__detail-label {
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.3px;
+}
