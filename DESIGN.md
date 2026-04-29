@@ -20,7 +20,7 @@ Warm minimalism — paper-warm backgrounds, soft-black ink, one restrained terra
 |-------|-----|-------|
 | `--ink` | `#1A1A1A` | Soft-black. Dark slide backgrounds, headline text on light slides |
 | `--ink-light` | `#2E2E2E` | Secondary dark for supporting emphasis |
-| `--coral` | `#C84B2F` | **Brand terracotta.** The single accent — key stats, emphasized words, highlights |
+| `--coral` | `#B83F28` | **Brand terracotta.** The single accent — key stats, emphasized words, highlights |
 | `--coral-soft` | `#E8A79B` | Lighter terracotta tint — section labels on dark backgrounds |
 | `--warm-bg` | `#FAF8F3` | Paper-warm off-white. Primary light slide background |
 | `--warm-bg-alt` | `#F2EDE5` | Slightly deeper warm — zone backgrounds, subtle cards |
