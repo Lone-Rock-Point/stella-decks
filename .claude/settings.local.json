@@ -4,7 +4,14 @@
       "mcp__claude_ai_Google_Drive__read_file_content",
       "Bash(mkdir -p /tmp/mbr)",
       "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://mybrightridge.com/\" -o /tmp/mbr/home.html)",
-      "Read(//tmp/mbr/**)"
+      "Read(//tmp/mbr/**)",
+      "Bash(git commit *)",
+      "Bash(git add *)",
+      "WebFetch(domain:openclaw.ai)",
+      "WebFetch(domain:www.turingpost.com)",
+      "WebFetch(domain:docs.google.com)",
+      "Bash(git mv *)",
+      "Bash(node *)"
     ]
   }
 }

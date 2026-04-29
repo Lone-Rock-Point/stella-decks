@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--next-steps { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .next-steps__header { margin-bottom: 36px; }
+  .next-steps__list { flex: 1; display: flex; flex-direction: column; gap: 28px; }
+  .next-steps__item {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .next-steps__item:last-child { border-bottom: none; padding-bottom: 0; }
+  .next-steps__num {
+    font-family: var(--serif);
+    font-size: 60px;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    color: var(--coral);
+    font-style: italic;
+  }
+  .next-steps__body { padding-top: 6px; }
+  .next-steps__title {
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .next-steps__title em { font-style: italic; color: var(--coral); }
+  .next-steps__desc {
+    font-size: 15px;
+    color: var(--slate);
+    line-height: 1.6;
+    max-width: 720px;
+  }
+  .next-steps__desc strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="slide slide--next-steps">
+  <div class="next-steps__header">
+    <div class="section-label section-label--light">Some next steps</div>
+    <h1 class="slide-title">Two things worth doing this <em>quarter.</em></h1>
+  </div>
+  <div class="next-steps__list">
+    <div class="next-steps__item">
+      <div class="next-steps__num">01</div>
+      <div class="next-steps__body">
+        <div class="next-steps__title">Write the job description for the AI hire you'd most want to make.</div>
+        <div class="next-steps__desc">Not a prompt. The <strong>job</strong> &mdash; title, role, responsibilities, systems they'd touch, the kind of person they'd be. You'll learn more from that exercise than from a year of prompt-tuning.</div>
+      </div>
+    </div>
+    <div class="next-steps__item">
+      <div class="next-steps__num">02</div>
+      <div class="next-steps__body">
+        <div class="next-steps__title">Get fluent in the differences between AI models.</div>
+        <div class="next-steps__desc">OpenClaw has the concept of <strong>subagents</strong> &mdash; you can assign specific models to specific tasks. Don't burn frontier-model tokens on something that's just checking CPU health or disk space. The agency that knows when to use which model spends a lot less.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--about-lrp { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .about-lrp__header { margin-bottom: 40px; }
+  .about-lrp__body { flex: 1; display: flex; gap: 56px; align-items: flex-start; }
+  .about-lrp__left { flex: 1.1; }
+  .about-lrp__lede {
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 1.35;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+    margin-bottom: 24px;
+    max-width: 520px;
+  }
+  .about-lrp__lede em { font-style: italic; color: var(--coral); }
+  .about-lrp__supporting {
+    font-size: 15px;
+    color: var(--slate);
+    line-height: 1.7;
+    max-width: 480px;
+  }
+  .about-lrp__right { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+  .about-lrp__stat {
+    border-top: 2px solid var(--ink);
+    padding-top: 18px;
+  }
+  .about-lrp__stat-value {
+    font-family: var(--serif);
+    font-size: 40px;
+    line-height: 1.05;
+    letter-spacing: -0.8px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .about-lrp__stat-value--coral { color: var(--coral); }
+  .about-lrp__stat-label {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide--about-lrp">
+  <div class="about-lrp__header">
+    <div class="section-label section-label--light">About Lone Rock Point</div>
+    <h1 class="slide-title">A digital agency that lives in <em>government work.</em></h1>
+  </div>
+  <div class="about-lrp__body">
+    <div class="about-lrp__left">
+      <div class="about-lrp__lede">
+        Web modernization, accessibility, and user experience for federal and government-adjacent organizations.
+      </div>
+      <div class="about-lrp__supporting">
+        We help large institutions navigate enterprise web strategy, content governance, and the shift toward modern, standards-based digital platforms.
+      </div>
+    </div>
+    <div class="about-lrp__right">
+      <div class="about-lrp__stat">
+        <div class="about-lrp__stat-value">NASA</div>
+        <div class="about-lrp__stat-label">Leading web modernization at enterprise scale.</div>
+      </div>
+      <div class="about-lrp__stat">
+        <div class="about-lrp__stat-value">Department of Energy</div>
+        <div class="about-lrp__stat-label">Using the CivicPress framework.</div>
+      </div>
+      <div class="about-lrp__stat">
+        <div class="about-lrp__stat-value">WordPress</div>
+        <div class="about-lrp__stat-label">Mission-critical, complex digital environments.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>

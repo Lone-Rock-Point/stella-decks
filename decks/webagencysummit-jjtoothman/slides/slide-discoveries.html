@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--discoveries { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .discoveries__header { margin-bottom: 32px; }
+  .discoveries__grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-content: start;
+  }
+  .discoveries__card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 22px 22px 20px;
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+  }
+  .discoveries__num {
+    font-family: var(--serif);
+    font-size: 12px;
+    color: var(--coral);
+    font-style: italic;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  .discoveries__title {
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.22;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .discoveries__body {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.55;
+  }
+  .discoveries__body strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="slide slide--discoveries">
+  <div class="discoveries__header">
+    <div class="section-label section-label--light">What I'd tell you</div>
+    <h1 class="slide-title">Five things I didn't expect.</h1>
+  </div>
+  <div class="discoveries__grid">
+    <div class="discoveries__card">
+      <div class="discoveries__num">Discovery one</div>
+      <div class="discoveries__title">Personification makes a big difference.</div>
+      <div class="discoveries__body">Viv has a background. A taste. A way of writing. Inside OpenClaw, this lives in <strong>SOUL.md</strong> &mdash; durable identity, not a prompt I hope she remembers.</div>
+    </div>
+    <div class="discoveries__card">
+      <div class="discoveries__num">Discovery two</div>
+      <div class="discoveries__title">Always-on beats session-based.</div>
+      <div class="discoveries__body">Viv isn't a chat window I open. She's running. The morning briefing arrives because she's been working overnight &mdash; not because I prompted her.</div>
+    </div>
+    <div class="discoveries__card">
+      <div class="discoveries__num">Discovery three</div>
+      <div class="discoveries__title">Centralization beats individual setups.</div>
+      <div class="discoveries__body">One workspace. One source of truth for skills, prompts, integrations. The team isn't running 12 versions of Claude with 12 prompt libraries. We're all using the same Viv.</div>
+    </div>
+    <div class="discoveries__card">
+      <div class="discoveries__num">Discovery four</div>
+      <div class="discoveries__title">The gateway routes the models, not me.</div>
+      <div class="discoveries__body">I don't switch between Claude, OpenAI, and local models. OpenClaw routes whichever model fits the task. I just talk to Viv.</div>
+    </div>
+    <div class="discoveries__card">
+      <div class="discoveries__num">Discovery five</div>
+      <div class="discoveries__title">It can be divisive.</div>
+      <div class="discoveries__body">Not everyone agrees with relating to AI in human terms. Naming it, giving it a personality, treating it like a colleague &mdash; some people find that useful, some find it uncomfortable. Worth knowing going in.</div>
+    </div>
+  </div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>

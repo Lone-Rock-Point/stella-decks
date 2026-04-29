@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--clarity { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .clarity__header { margin-bottom: 32px; }
+  .clarity__grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-content: stretch;
+  }
+  .clarity__card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 8px;
+    padding: 26px 26px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .clarity__eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .clarity__title {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.22;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .clarity__body {
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="slide slide--clarity">
+  <div class="clarity__header">
+    <div class="section-label section-label--light">How we help</div>
+    <h1 class="slide-title">It usually starts with a <em>clarity audit.</em></h1>
+  </div>
+  <div class="clarity__grid">
+    <div class="clarity__card">
+      <div class="clarity__eyebrow">What we look at</div>
+      <div class="clarity__title">Where AI fits. Where it doesn't.</div>
+      <div class="clarity__body">Roles, workflows, tooling, and data. Where AI is already showing up, where it's quietly failing, and where the next agent should live.</div>
+    </div>
+    <div class="clarity__card">
+      <div class="clarity__eyebrow">What you walk away with</div>
+      <div class="clarity__title">A plan, not another deck.</div>
+      <div class="clarity__body">A prioritized roadmap, the first agent worth building, and the integrations you need to wire up to make it real.</div>
+    </div>
+    <div class="clarity__card">
+      <div class="clarity__eyebrow">Who it's for</div>
+      <div class="clarity__title">Operators ready to hire, not experiment.</div>
+      <div class="clarity__body">Agencies and organizations bringing agentic AI into the workforce &mdash; past the curiosity phase, ready to commit to a real engagement.</div>
+    </div>
+  </div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>

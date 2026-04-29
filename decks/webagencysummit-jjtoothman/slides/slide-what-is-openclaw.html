@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--what-openclaw { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .what-openclaw__header { margin-bottom: 32px; }
+  .what-openclaw__body { flex: 1; display: flex; gap: 56px; align-items: flex-start; }
+  .what-openclaw__left { flex: 1.05; }
+  .what-openclaw__lede {
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 1.35;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    margin-bottom: 22px;
+    max-width: 500px;
+  }
+  .what-openclaw__lede em { font-style: italic; color: var(--coral); }
+  .what-openclaw__quote {
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.65;
+    max-width: 460px;
+    border-left: 2px solid rgba(200, 75, 47, 0.35);
+    padding-left: 16px;
+  }
+  .what-openclaw__quote-attr { display: block; margin-top: 8px; font-size: 12px; color: var(--slate-light); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+  .what-openclaw__right { flex: 1; }
+  .what-openclaw__list { display: flex; flex-direction: column; gap: 16px; }
+  .what-openclaw__item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .what-openclaw__item:last-child { border-bottom: none; padding-bottom: 0; }
+  .what-openclaw__item-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--coral);
+    padding-top: 2px;
+  }
+  .what-openclaw__item-text {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .what-openclaw__item-text strong { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="slide slide--what-openclaw">
+  <div class="what-openclaw__header">
+    <div class="section-label section-label--light">What is OpenClaw?</div>
+    <h1 class="slide-title">A self-hosted control plane for <em>your AI assistant.</em></h1>
+  </div>
+  <div class="what-openclaw__body">
+    <div class="what-openclaw__left">
+      <div class="what-openclaw__lede">
+        Open-source. Runs on your machine. Coordinates between models, messaging platforms, tools, and persistent memory.
+      </div>
+      <div class="what-openclaw__quote">
+        &ldquo;The agent itself is a collection of files on disk rather than code you have to write.&rdquo;
+        <span class="what-openclaw__quote-attr">openclaw.ai</span>
+      </div>
+    </div>
+    <div class="what-openclaw__right">
+      <div class="what-openclaw__list">
+        <div class="what-openclaw__item">
+          <div class="what-openclaw__item-label">Multi-model</div>
+          <div class="what-openclaw__item-text">Claude, OpenAI, local models. The gateway routes &mdash; you don't switch tools.</div>
+        </div>
+        <div class="what-openclaw__item">
+          <div class="what-openclaw__item-label">Multi-channel</div>
+          <div class="what-openclaw__item-text">Slack, WhatsApp, Telegram, iMessage, Signal. DMs and group chats.</div>
+        </div>
+        <div class="what-openclaw__item">
+          <div class="what-openclaw__item-label">Identity-as-files</div>
+          <div class="what-openclaw__item-text">Personality lives in <strong>SOUL.md</strong>. Skills auto-discovered from the workspace.</div>
+        </div>
+        <div class="what-openclaw__item">
+          <div class="what-openclaw__item-label">Always on</div>
+          <div class="what-openclaw__item-text">24/7 background operation. Not a chat window you open.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>

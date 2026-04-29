@@ -1,0 +1,31 @@
+{
+  "title": "Using OpenClaw to Add a Team Member to Our Digital Agency",
+  "slides": [
+    { "file": "slide-cover.html", "label": "Cover" },
+    { "file": "slide-about-lrp.html", "label": "About Lone Rock Point" },
+    { "file": "slide-what-is-openclaw.html", "label": "What is OpenClaw" },
+    { "file": "slide-claudpilled.html", "label": "Claude-pilled" },
+    { "file": "slide-openclaw-appeal.html", "label": "Why try OpenClaw" },
+    { "file": "slide-jarvis.html", "label": "Promised Jarvis" },
+    { "file": "slide-chief-of-staff-desire.html", "label": "What I wanted" },
+    { "file": "slide-what-i-know.html", "label": "What I know about myself" },
+    { "file": "slide-attributes.html", "label": "Five attributes of a teammate" },
+    { "file": "slide-soundbite.html", "label": "No work robots find tedious" },
+    { "file": "slide-vanity.html", "label": "Vanity" },
+    { "file": "slide-pop-culture.html", "label": "Two scenes" },
+    { "file": "slide-influences.html", "label": "Influences" },
+    { "file": "slide-systems.html", "label": "Connecting the systems" },
+    { "file": "slide-meet-viv.html", "label": "Meet Viv" },
+    { "file": "slide-original-intention.html", "label": "Original intention" },
+    { "file": "slide-team-resource.html", "label": "Team resource" },
+    { "file": "slide-team-onboarding.html", "label": "How I added her to the team" },
+    { "file": "slide-silly-stuff.html", "label": "Silly stuff" },
+    { "file": "slide-hypothesis.html", "label": "The hypothesis" },
+    { "file": "slide-discoveries.html", "label": "Five discoveries" },
+    { "file": "slide-other-ways.html", "label": "Other ways" },
+    { "file": "slide-next-steps.html", "label": "Next steps" },
+    { "file": "slide-clarity-audit.html", "label": "Clarity audit" },
+    { "file": "slide-closing.html", "label": "Closing" },
+    { "file": "slide-qa.html", "label": "Q&A" }
+  ]
+}

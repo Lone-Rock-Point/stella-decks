@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--meet-viv { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .meet-viv__header { margin-bottom: 40px; }
+  .meet-viv__body { flex: 1; display: flex; gap: 64px; align-items: center; }
+  .meet-viv__portrait {
+    width: 320px; height: 320px;
+    background: var(--ink);
+    border-radius: 8px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .meet-viv__portrait::before {
+    content: 'V';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 120px;
+    color: var(--coral-soft); font-style: italic;
+    z-index: 0;
+  }
+  .meet-viv__portrait img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .meet-viv__bio { flex: 1; }
+  .meet-viv__name {
+    font-family: var(--serif);
+    font-size: 88px;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .meet-viv__role {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  .meet-viv__bio-list { display: flex; flex-direction: column; gap: 12px; }
+  .meet-viv__bio-item {
+    font-size: 16px;
+    color: var(--slate);
+    line-height: 1.55;
+    padding-left: 18px;
+    position: relative;
+    max-width: 460px;
+  }
+  .meet-viv__bio-item::before {
+    content: '';
+    position: absolute; left: 0; top: 9px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--coral);
+    opacity: 0.6;
+  }
+  .meet-viv__bio-item strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="slide slide--meet-viv">
+  <div class="meet-viv__header">
+    <div class="section-label section-label--light">Meet her</div>
+  </div>
+  <div class="meet-viv__body">
+    <div class="meet-viv__portrait">
+      <img src="../assets/viv.jpg" alt="Viv" onerror="this.remove()">
+    </div>
+    <div class="meet-viv__bio">
+      <div class="meet-viv__name">Viv.</div>
+      <div class="meet-viv__role">AI Chief of Staff</div>
+      <div class="meet-viv__bio-list">
+        <div class="meet-viv__bio-item"><strong>Onboarded the same way as everyone else.</strong> Worked through our Asana onboarding checklist. Introduced herself in Slack.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>

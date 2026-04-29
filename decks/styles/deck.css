@@ -662,5 +662,45 @@ body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: anti
   max-width: 300px;
 }
 
+/* 4-column variant of crew grid (e.g., influences / inspirations). */
+.crew__grid--four { grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.crew__grid--four .crew__photo { width: 160px; height: 160px; margin-bottom: 20px; }
+.crew__grid--four .crew__note { max-width: 240px; font-size: 13px; }
+
+/* ── Statement Slide ──
+   Sparse light-bg slide carrying a single big assertion.
+   Use for hook / hypothesis / Monday-morning / closing moments
+   when you want a statement to breathe but stay in cream. */
+.slide--statement {
+  background: var(--warm-bg);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--pad-argument-y) var(--pad-argument-x);
+}
+.statement__label {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.statement__title {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--ink);
+  max-width: 980px;
+}
+.statement__title em { color: var(--coral); font-style: italic; }
+.statement__sub {
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+  max-width: 720px;
+  margin-top: 28px;
+}
+
 /* ── Print ── */
 @media print { body { background: white; } .slide { page-break-after: always; } }

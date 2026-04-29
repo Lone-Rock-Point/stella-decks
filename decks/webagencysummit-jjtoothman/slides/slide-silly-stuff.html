@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--silly { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .silly__header { margin-bottom: 36px; }
+  .silly__grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-content: stretch; }
+  .silly__card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  .silly__card-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .silly__card-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.18;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .silly__card-body {
+    font-size: 15px;
+    color: var(--slate);
+    line-height: 1.65;
+  }
+  .silly__footer {
+    margin-top: 24px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--slate);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .silly__footer strong { color: var(--ink); font-weight: 600; font-style: normal; }
+</style>
+</head>
+<body>
+<div class="slide slide--silly">
+  <div class="silly__header">
+    <div class="section-label section-label--light">Silly stuff &mdash; that turned out to matter</div>
+    <h1 class="slide-title"><em>Extra capabilities.</em></h1>
+  </div>
+  <div class="silly__grid">
+    <div class="silly__card">
+      <div class="silly__card-tag">Phone number</div>
+      <div class="silly__card-title">She can make and take calls.</div>
+      <div class="silly__card-body">A real number. She makes outbound calls when it's faster than email.</div>
+    </div>
+    <div class="silly__card">
+      <div class="silly__card-tag">Spotify</div>
+      <div class="silly__card-title">Her own account. She DJs.</div>
+      <div class="silly__card-body">Her own Spotify, her own taste. She has strong opinions about what plays at 4pm on a Friday.</div>
+    </div>
+  </div>
+  <div class="silly__footer">The point: <strong>she has a presence in the world</strong>, not just an inbox.</div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>

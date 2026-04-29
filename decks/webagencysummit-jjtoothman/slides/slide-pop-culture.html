@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles/deck.css">
+<style>
+  .slide--pop-culture { background: var(--warm-bg); flex-direction: column; padding: var(--pad-argument-y) var(--pad-argument-x); }
+  .pop-culture__header { margin-bottom: 28px; }
+  .pop-culture__grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-content: stretch; }
+  .pop-culture__card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .pop-culture__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .pop-culture__image::before {
+    content: attr(data-fallback);
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--coral-soft);
+    letter-spacing: -0.3px;
+    z-index: 0;
+  }
+  .pop-culture__image img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .pop-culture__card-body-wrap {
+    padding: 24px 28px 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .pop-culture__card-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .pop-culture__card-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .pop-culture__card-body {
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .pop-culture__card-body em { font-style: italic; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="slide slide--pop-culture">
+  <div class="pop-culture__header">
+    <div class="section-label section-label--light">The mental picture</div>
+    <h1 class="slide-title">Two scenes I kept thinking about.</h1>
+  </div>
+  <div class="pop-culture__grid">
+    <div class="pop-culture__card">
+      <div class="pop-culture__image" data-fallback="The West Wing">
+        <img src="../assets/west-wing.jpg" alt="The West Wing morning briefing" onerror="this.remove()">
+      </div>
+      <div class="pop-culture__card-body-wrap">
+        <div class="pop-culture__card-tag">The West Wing</div>
+        <div class="pop-culture__card-title">The morning intelligence briefing.</div>
+        <div class="pop-culture__card-body">President Bartlett walks in. Someone's already condensed the world into the few things he needs to know. He doesn't read the whole newspaper. He gets the read.</div>
+      </div>
+    </div>
+    <div class="pop-culture__card">
+      <div class="pop-culture__image" data-fallback="Spy Game">
+        <img src="../assets/spy-game.jpg" alt="Spy Game dossier scene" onerror="this.remove()">
+      </div>
+      <div class="pop-culture__card-body-wrap">
+        <div class="pop-culture__card-tag">Spy Game</div>
+        <div class="pop-culture__card-title">The dossier on demand.</div>
+        <div class="pop-culture__card-body">CIA leaders in a conference room. They ask. Five minutes later, someone walks in with a dossier. They don't go look things up &mdash; the material comes to them, formatted for the question they actually asked.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num slide-num--light"></div>
+</div>
+</body>
+</html>
