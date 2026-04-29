@@ -20,7 +20,7 @@ Live 60–90 minute quarterly board meeting. In-person or video. Slides should a
 
 This deck uses an **alternate, deck-local design system** (Option A from setup discussion). DESIGN.md and deck.css live inside this deck's folder, separate from the Stella Decks shared system at `decks/styles/deck.css`. Slides in this deck link to `../styles/deck.css` (one level up), not the project-shared CSS.
 
-## Slide arc (13 main + 6 appendix = 19 slides)
+## Slide arc (13 main + 10 appendix = 23 slides)
 
 ### Main deck — Quarterly Briefing (slides 1–13)
 
@@ -85,7 +85,7 @@ Mark editable placeholders with italic notes at the bottom of each slide where h
 
 - Folder structure: ✓ created
 - BRIEF.md: ✓ written
-- manifest.json: ✓ stubbed (slides referenced but not yet built)
-- DESIGN.md: placeholder — to be filled in via `/design-setup`
-- styles/deck.css: not yet created — `/design-setup` will produce it
-- Slides: not yet built — design system first
+- manifest.json: ✓ complete (23 slides)
+- DESIGN.md: ✓ configured (deck-local design system)
+- styles/deck.css: ✓ created (deck-local, at `styles/deck.css`)
+- Slides: ✓ all 23 slides built
