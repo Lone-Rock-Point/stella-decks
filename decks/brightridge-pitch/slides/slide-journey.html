@@ -3,32 +3,334 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../../styles/deck.css">
+<style>
+
+.slide--cjm {
+  color: var(--ink);
+  background: var(--warm-bg);
+  flex-direction: column;
+  padding: var(--pad-argument-y) var(--pad-argument-x);
+}
+
+.cjm__section-label {
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 6px;
+}
+
+.cjm__title {
+  font: 600 34px/1.1 var(--serif);
+  color: var(--ink);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.cjm__title em {
+  color: var(--coral);
+  font-style: italic;
+}
+
+/* Grid body area */
+.cjm__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.cjm__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 72px repeat(5, 1fr);
+  grid-template-rows: 36px repeat(1, 1fr);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.cjm__corner {
+  background: var(--ink);
+}
+
+.cjm__phase-header {
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  border-left: 1px solid rgba(255,255,255,0.07);
+}
+
+.cjm__phase-num {
+  font: 600 8px/1 var(--sans);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  margin-bottom: 3px;
+}
+
+.cjm__phase-name {
+  font: 600 12px/1 var(--sans);
+  color: var(--white);
+  letter-spacing: 0.2px;
+}
+
+.cjm__row-label {
+  background: var(--warm-bg-alt);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+}
+
+.cjm__row-label-text {
+  font: 600 8px/1 var(--sans);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--slate);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+.cjm__cell {
+  padding: 8px 10px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-left: 1px solid rgba(0,0,0,0.05);
+  background: var(--warm-bg);
+  font: 400 10.5px/1.5 var(--sans);
+  color: var(--slate);
+  overflow: hidden;
+}
+
+.cjm__cell--alt {
+  background: var(--warm-bg-alt);
+}
+
+.cjm__cell--pain {
+  background: #FDF5F2;
+}
+
+.cjm__cell em {
+  color: var(--coral);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Experience row — spans all 5 phase columns */
+.cjm__exp-track {
+  grid-column: 2 / 7;
+  background: var(--warm-bg);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-left: 1px solid rgba(0,0,0,0.05);
+  padding: 6px 12px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.cjm__exp-labels {
+  display: flex;
+}
+
+.cjm__exp-label {
+  flex: 1;
+  font: italic 400 13px/1 var(--serif);
+  color: var(--slate);
+  text-align: center;
+}
+
+.cjm__exp-label--low {
+  color: var(--coral);
+}
+
+/* Curve container: SVG line + absolutely positioned circular dots */
+.cjm__exp-curve {
+  position: relative;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.cjm__exp-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Positive/neutral dots default to slate; negative dots are coral */
+.cjm__exp-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--slate);
+  transform: translate(-50%, -50%);
+}
+
+.cjm__exp-dot--low {
+  background: var(--coral);
+}
+</style>
 </head>
 <body>
-<div class="slide slide--flow">
-  <div class="flow__header">
-    <h1 class="slide-title">From landing to signup. In <em>four moves.</em></h1>
-  </div>
-  <div class="flow__grid">
-    <div class="flow__step">
-      <div class="flow__step-num">01 &middot; Arrive</div>
-      <div class="flow__step-title">Show pricing + availability first.</div>
-      <div class="flow__step-desc">The homepage leads with fiber availability check and tier pricing in the hero. No scroll required. No login required to see plans.</div>
+<div class="slide slide--cjm">
+    <div class="cjm__header">
+      <div class="cjm__section-label">Customer Journey Map</div>
+      <h1 class="slide-title">From first impression to <em>lasting loyalty.</em></h1>
     </div>
-    <div class="flow__step">
-      <div class="flow__step-num">02 &middot; Check</div>
-      <div class="flow__step-title">Address lookup returns real plans.</div>
-      <div class="flow__step-desc">Enter an address, get the plans available at that address, with accurate pricing. No separate Middle-Mile checker. One lookup, one answer.</div>
-    </div>
-    <div class="flow__step">
-      <div class="flow__step-num">03 &middot; Compare</div>
-      <div class="flow__step-title">Nutrition labels inline.</div>
-      <div class="flow__step-desc">Plans side-by-side with FCC disclosures visible in-context, not hidden in modals. The source of truth matches what the homepage shows.</div>
-    </div>
-    <div class="flow__step">
-      <div class="flow__step-num">04 &middot; Sign up</div>
-      <div class="flow__step-title">Configure, schedule, done.</div>
-      <div class="flow__step-desc">Add-ons, install scheduling, and account creation in one flow. Clean handoff to SmartHub for ongoing account management.</div>
+  <div class="cjm">
+
+    <div class="cjm__body">
+      <div class="cjm__grid">
+
+        <!-- Phase header row -->
+        <div class="cjm__corner"></div>
+        <div class="cjm__phase-header">
+          <div class="cjm__phase-num">01</div>
+          <div class="cjm__phase-name">Awareness</div>
+        </div>
+        <div class="cjm__phase-header">
+          <div class="cjm__phase-num">02</div>
+          <div class="cjm__phase-name">Consideration</div>
+        </div>
+        <div class="cjm__phase-header">
+          <div class="cjm__phase-num">03</div>
+          <div class="cjm__phase-name">Decision</div>
+        </div>
+        <div class="cjm__phase-header">
+          <div class="cjm__phase-num">04</div>
+          <div class="cjm__phase-name">Service</div>
+        </div>
+        <div class="cjm__phase-header">
+          <div class="cjm__phase-num">05</div>
+          <div class="cjm__phase-name">Loyalty</div>
+        </div>
+
+        <!-- Touchpoints row -->
+        <div class="cjm__row-label"><span class="cjm__row-label-text">Touchpoints</span></div>
+        <div class="cjm__cell">
+          Neighbor referral<br>
+          Google search<br>
+          Local news &amp; social<br>
+          Community mailer
+        </div>
+        <div class="cjm__cell">
+          mybrightridge.com<br>
+          Plans &amp; pricing page<br>
+          Nutrition labels<br>
+          Competitor comparison
+        </div>
+        <div class="cjm__cell">
+          "Check Availability" CTAs<br>
+          Address lookup tool<br>
+          Plan selection page<br>
+          FAQs &amp; support docs
+        </div>
+        <div class="cjm__cell">
+          SmartHub portal<br>
+          Confirmation email<br>
+          Installation scheduling<br>
+          Welcome materials
+        </div>
+        <div class="cjm__cell">
+          Online account portal<br>
+          Support &amp; billing<br>
+          Community &amp; neighbors<br>
+          Word-of-mouth referral
+        </div>
+
+        <!-- Actions row -->
+        <div class="cjm__row-label"><span class="cjm__row-label-text">Actions</span></div>
+        <div class="cjm__cell cjm__cell--alt">
+          Hears about BrightRidge from a neighbor or search result. Visits the site for the first time.
+        </div>
+        <div class="cjm__cell cjm__cell--alt">
+          Browses plan options, compares speeds and prices, reads nutrition labels, weighs against competitors.
+        </div>
+        <div class="cjm__cell cjm__cell--alt">
+          Enters address to confirm availability. Selects a plan. Starts enrollment.
+        </div>
+        <div class="cjm__cell cjm__cell--alt">
+          Creates account in SmartHub. Schedules installation. Sets up auto-pay.
+        </div>
+        <div class="cjm__cell cjm__cell--alt">
+          Manages account, pays bills, contacts support. Considers upgrading or referring a neighbor.
+        </div>
+
+        <!-- Experience row -->
+        <div class="cjm__row-label"><span class="cjm__row-label-text">Experience</span></div>
+        <div class="cjm__exp-track">
+          <div class="cjm__exp-labels">
+            <span class="cjm__exp-label">Hopeful</span>
+            <span class="cjm__exp-label cjm__exp-label--low">Uncertain</span>
+            <span class="cjm__exp-label cjm__exp-label--low">Frustrated</span>
+            <span class="cjm__exp-label cjm__exp-label--low">Confused</span>
+            <span class="cjm__exp-label">Satisfied</span>
+          </div>
+          <!-- viewBox 0 0 500 38. Phase centers x=50,150,250,350,450. Midline at y=19.
+               y=9 → positive (Awareness), y=24 → negative (Consideration),
+               y=32 → most negative (Decision), y=28 → negative (Service/SmartHub handoff),
+               y=19 → neutral midpoint (Loyalty/Satisfied). -->
+          <div class="cjm__exp-curve">
+            <svg class="cjm__exp-svg" viewBox="0 0 500 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Neutral midline -->
+              <line x1="0" y1="19" x2="500" y2="19" stroke="rgba(90,90,90,0.18)" stroke-width="0.5" vector-effect="non-scaling-stroke"/>
+              <!-- Dotted emotion curve -->
+              <path d="M 50,9 C 100,9 100,24 150,24 C 200,24 200,32 250,32 C 300,32 300,28 350,28 C 400,28 400,19 450,19"
+                    fill="none" stroke="#B6470E" stroke-width="2.5" stroke-linecap="round"
+                    stroke-dasharray="0 9" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <!-- HTML dots stay perfectly circular regardless of SVG coordinate stretch -->
+            <span class="cjm__exp-dot"      style="left:10%;top:9px"></span>
+            <span class="cjm__exp-dot--low cjm__exp-dot" style="left:30%;top:24px"></span>
+            <span class="cjm__exp-dot--low cjm__exp-dot" style="left:50%;top:32px"></span>
+            <span class="cjm__exp-dot--low cjm__exp-dot" style="left:70%;top:28px"></span>
+            <span class="cjm__exp-dot"      style="left:90%;top:19px"></span>
+          </div>
+        </div>
+
+        <!-- Pain Points row -->
+        <div class="cjm__row-label"><span class="cjm__row-label-text">Pain Points</span></div>
+        <div class="cjm__cell cjm__cell--pain">
+          Slow load on mobile and a cluttered homepage make it hard to understand what's being offered or where to go first.
+        </div>
+        <div class="cjm__cell cjm__cell--pain">
+          Pricing shown in one place doesn't match another. Plan options don't map to real-world use cases. Spanish-speaking visitors have no clear path to content in their language.
+        </div>
+        <div class="cjm__cell cjm__cell--pain">
+          Competing CTAs create confusion without hierarchy. Language support disappears on mobile. A failed address lookup leaves customers with no next step.
+        </div>
+        <div class="cjm__cell cjm__cell--pain">
+          Enrollment hands off to a visually foreign environment with its own login. Nothing signals that customers are still in the right place.
+        </div>
+        <div class="cjm__cell cjm__cell--pain">
+          Account management lives outside the familiar brand. No clear path to new plans or upgrades. No clear path to referrals.
+        </div>
+
+        <!-- Opportunities row -->
+        <div class="cjm__row-label"><span class="cjm__row-label-text">Opportunities</span></div>
+        <div class="cjm__cell">
+          Fast, mobile-first entry. Compelling above-the-fold value prop. Clear community identity.
+        </div>
+        <div class="cjm__cell">
+          Unified pricing across every touchpoint. Integrated bilingual experience. Clear navigation to the right plan.
+        </div>
+        <div class="cjm__cell">
+          Single focused CTA per page. Consistent pricing throughout. Language-persistent browsing for every visitor.
+        </div>
+        <div class="cjm__cell">
+          Warm visual handoff to SmartHub. Enrollment guidance that maintains brand continuity across the threshold.
+        </div>
+        <div class="cjm__cell">
+          Referral program. Proactive upgrade prompts. Improved self-service account management.
+        </div>
+
+      </div>
     </div>
   </div>
   <div class="slide-num slide-num--light"></div>
