@@ -32,7 +32,7 @@ Warm minimalism — paper-warm backgrounds, soft-black ink, one restrained terra
 
 **One editorial spot of terracotta per slide, maximum.** It marks the single most important word, stat, or signal. If you can't decide what deserves it, the slide has too much happening. Never use it as a large background fill.
 
-Section labels (`.section-label`) are structural chrome — they use `--coral` by default and don't count against the one-spot rule. The rule applies to editorial choices: the `<em>` in a headline, a key stat, a highlighted number.
+Section labels (`.section-label`) are structural chrome — use the appropriate variant for the slide context (for example, `.section-label--light` or `.section-label--dark`). They don't count against the one-spot rule. The rule applies to editorial choices: the `<em>` in a headline, a key stat, a highlighted number.
 
 ## Typography
 
