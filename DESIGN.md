@@ -20,7 +20,7 @@ Warm minimalism — paper-warm backgrounds, soft-black ink, one restrained terra
 |-------|-----|-------|
 | `--ink` | `#1A1A1A` | Soft-black. Dark slide backgrounds, headline text on light slides |
 | `--ink-light` | `#2E2E2E` | Secondary dark for supporting emphasis |
-| `--coral` | `#C84B2F` | **Brand terracotta.** The single accent — key stats, emphasized words, highlights |
+| `--coral` | `#B6470E` | **Brand terracotta.** The single accent — key stats, emphasized words, highlights |
 | `--coral-soft` | `#E8A79B` | Lighter terracotta tint — section labels on dark backgrounds |
 | `--warm-bg` | `#FAF8F3` | Paper-warm off-white. Primary light slide background |
 | `--warm-bg-alt` | `#F2EDE5` | Slightly deeper warm — zone backgrounds, subtle cards |
@@ -30,7 +30,9 @@ Warm minimalism — paper-warm backgrounds, soft-black ink, one restrained terra
 
 ### Accent rule
 
-**One spot of terracotta per slide, maximum.** It marks the single most important word, stat, or signal. If you can't decide what deserves it, the slide has too much happening. Never use it as a large background fill.
+**One editorial spot of terracotta per slide, maximum.** It marks the single most important word, stat, or signal. If you can't decide what deserves it, the slide has too much happening. Never use it as a large background fill.
+
+Section labels (`.section-label`) are structural chrome — use the appropriate variant for the slide context (for example, `.section-label--light` or `.section-label--dark`). They don't count against the one-spot rule. The rule applies to editorial choices: the `<em>` in a headline, a key stat, a highlighted number.
 
 ## Typography
 
