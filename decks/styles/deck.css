@@ -293,7 +293,7 @@ body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: anti
 .terms__card-label { font-size: 13px; color: var(--slate); font-weight: 500; line-height: 1.4; }
 .terms__card-sub { font-size: 13px; color: var(--slate); margin-top: 6px; line-height: 1.4; }
 .terms__footnotes { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); }
-.terms__footnote { font-size: 11px; color: var(--slate-light); line-height: 1.6; }
+.terms__footnote { font-size: 11px; color: var(--slate); line-height: 1.6; }
 
 /* ── Data Slides & Tables ── */
 .slide--data { background: var(--warm-bg); flex-direction: column; padding: var(--pad-data-y) var(--pad-data-x); }
